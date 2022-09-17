@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/abhay676/school-managment/server/pkg/app"
-	"github.com/abhay676/school-managment/server/pkg/repository"
+	"github.com/abhay676/school-managment/services/gatekeeper/pkg/app"
+	"github.com/abhay676/school-managment/services/gatekeeper/pkg/repository"
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 )
