@@ -34,10 +34,14 @@ func (s *Server) Run() error {
 
 	s.setupMiddlewares()
 
+	router := s.InitV1Router()
+
+	s.InitRoutes(router)
+
 	if err := s.app.Listen(":3000"); err != nil {
 		return err
 	}
-	// TODO: setup Routes
+
 	return nil
 }
 
