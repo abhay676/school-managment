@@ -20,6 +20,13 @@ To run this project, you will need to add the following environment variables to
 
 `APP_NAME`
 
+`PORT`
+
+`JWT_SECRET`
+
+`JWT_EXPIRE`
+
+
 
 ## Features
 
@@ -42,5 +49,5 @@ To run this project, you will need to add the following environment variables to
 
 **Client:** React, Redux, TailwindCSS
 
-**Server:** Node, Express
+**Server:** Golang
 
