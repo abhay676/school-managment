@@ -12,8 +12,7 @@ type Entity struct {
 	Email    string `gorm:"not null;uniqueIndex"`
 	Password string `gorm:"not null"`
 	Name     string `gorm:"not null"`
-	// Need to define an enum
-	Role     string `sql:"type.ENUM('Teacher', 'Student', 'AdminOffice', 'HelpStaff')" gorm:"column:role"`
+	Role     string `gorm:"not null"`
 	IsActive bool   `gorm:"default:true"`
 }
 

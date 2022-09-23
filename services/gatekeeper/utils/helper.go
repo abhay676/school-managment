@@ -6,6 +6,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt"
 	"github.com/segmentio/ksuid"
 )
@@ -19,6 +20,16 @@ type Payload struct {
 func CreateUniqueId() string {
 	id := ksuid.New()
 	return id.String()
+}
+
+func ValidateRoles(role string) error {
+	roles := [5]string{"admin", "teacher", "student", "office", "helping_staff"}
+	for _, x := range roles {
+		if x == role {
+			return nil
+		}
+	}
+	return fiber.NewError(fiber.StatusBadRequest, "role not found")
 }
 
 func GenerateJWT(payload *Payload) string {

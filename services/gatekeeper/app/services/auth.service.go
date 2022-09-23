@@ -16,6 +16,10 @@ func CreateEntity(ctx *fiber.Ctx) error {
 		return ctx.JSON(err)
 	}
 
+	if err := utils.ValidateRoles(b.Role); err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(err)
+	}
+
 	e := &dal.Entity{
 		Name:     b.Name,
 		Email:    b.Email,
